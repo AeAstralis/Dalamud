@@ -227,6 +227,15 @@ internal class SettingsWindow : Window
             ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableSetMousePos;
         }
 
+        if (!configuration.IsKeyboardNavigationEnabled)
+        {
+            ImGui.GetIO().ConfigFlags &= ~ImGuiConfigFlags.NavEnableKeyboard;
+        }
+        else
+        {
+            ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
+        }
+
         configuration.QueueSave();
 
         Service<InterfaceManager>.Get().RebuildFonts();

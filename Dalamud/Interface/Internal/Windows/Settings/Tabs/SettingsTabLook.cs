@@ -128,6 +128,12 @@ public class SettingsTabLook : SettingsTab
             (v, c) => c.IsGamepadNavigationEnabled = v),
 
         new SettingsEntry<bool>(
+            Loc.Localize("DalamudSettingToggleKeyboardNavigation", "Enable full menu keyboard navigation."),
+            Loc.Localize("DalamudSettingToggleKeyboardNavigationHint", "This will allow you to navigate between menu items within Dalamud and plugin menus using the tab key and the arrow keys, and use space/enter to activate menu buttons."),
+            c => c.IsKeyboardNavigationEnabled,
+            (v, c) => c.IsKeyboardNavigationEnabled = v),
+
+        new SettingsEntry<bool>(
             Loc.Localize("DalamudSettingToggleTsm", "Show title screen menu"),
             Loc.Localize("DalamudSettingToggleTsmHint", "This will allow you to access certain Dalamud and Plugin functionality from the title screen."),
             c => c.ShowTsm,

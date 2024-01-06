@@ -646,6 +646,15 @@ internal class InterfaceManager : IDisposable, IServiceType
                 ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableSetMousePos;
             }
 
+            if (!configuration.IsKeyboardNavigationEnabled)
+            {
+                ImGui.GetIO().ConfigFlags &= ~ImGuiConfigFlags.NavEnableKeyboard;
+            }
+            else
+            {
+                ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
+            }
+
             // NOTE (Chiv) Explicitly deactivate on dalamud boot
             ImGui.GetIO().ConfigFlags &= ~ImGuiConfigFlags.NavEnableGamepad;
 

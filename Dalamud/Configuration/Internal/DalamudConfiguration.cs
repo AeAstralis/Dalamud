@@ -251,6 +251,11 @@ internal sealed class DalamudConfiguration : IServiceType, IDisposable
     public bool IsGamepadNavigationEnabled { get; set; } = true;
 
     /// <summary>
+    /// Gets or sets a value indicating whether full navigation via keyboard should be globally enabled in ImGui.
+    /// </summary>
+    public bool IsKeyboardNavigationEnabled { get; set; } = false;
+
+    /// <summary>
     /// Gets or sets a value indicating whether or not focus management is enabled.
     /// </summary>
     public bool IsFocusManagementEnabled { get; set; } = true;
